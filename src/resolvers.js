@@ -58,13 +58,13 @@ const resolvers = {
             return updatedCart
         },
 
-        removeItem: (_, {itemID}, {userID}) => {
+        removeItem: (_, {id}, {userID}) => {
             if (!userID) throw new AuthenticationError("Auth Needed")
             
             const cart = dataStore.getCart(userID)
             if (!cart) throw new Error("No cart found for user")
 
-            const updatedCart = dataStore.removeItemFromCart(userID, itemID)
+            const updatedCart = dataStore.removeItemFromCart(userID, id)
             if (!updatedCart) throw new Error("Item not found")        
 
             return updatedCart
