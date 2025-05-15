@@ -71,4 +71,4 @@ class DataStore {
     }
 }
 
-module.export = new DataStore();
+module.exports = new DataStore();
