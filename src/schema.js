@@ -23,6 +23,7 @@ const typedefs = gql`
     type Mutation {
         createCart: Cart!
         addItem(id: ID!, name: String! quantity: Int!, unitPrice: Float!): Cart!
+        updateItemQuantity(id: ID!, quantity: Int!): Cart!
         removeItem(id: ID!): Cart!
         clearCart: Cart!
     }
