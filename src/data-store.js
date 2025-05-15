@@ -14,7 +14,7 @@ class DataStore {
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
         }
-        this.carts.set(userID, carts)
+        this.carts.set(userID, cart)
         return cart
     }
 
@@ -67,6 +67,7 @@ class DataStore {
 
         cart.items = []
         cart.updatedAt = new Date().toISOString()
+        return cart
     }
 }
 
