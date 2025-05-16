@@ -165,6 +165,7 @@ describe("Shopping Cart API", () => {
 
         const response = await executeQuery(invalidQuery);
         expect(response.body.errors).toBeDefined();
+        expect(response.body.errors[0].extensions.http.status).toBe(400)
         expect(response.body.errors[0].message).toContain('must be positive');
     })
 
@@ -181,6 +182,7 @@ describe("Shopping Cart API", () => {
 
         const response = await executeQuery(updateQuery);
         expect(response.body.errors).toBeDefined();
+        expect(response.body.errors[0].extensions.http.status).toBe(404)
         expect(response.body.errors[0].message).toContain('Item not found');
     })
 })
